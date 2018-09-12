@@ -16,7 +16,7 @@ namespace Console_Booter
                 ConsoleShort.Space();
                 if (!(AsArgs(args)))
                 {
-                    ConsoleShort.WriteLine("Write -h or --help, for list all commands", ConsoleColor.DarkCyan);
+                    ConsoleShort.WriteLine("Write -h or --help, to list all commands available", ConsoleColor.DarkCyan);
                 }
                 else
                 {
