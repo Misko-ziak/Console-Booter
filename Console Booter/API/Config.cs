@@ -8,7 +8,7 @@ namespace Console_Booter.API
 {
     class Config
     {
-        //This Program as Maked By Night
+        //This Program has Maked By Night
         //Please Don't remove this commentary
         public static string BooterName = "C# Console Booter / Completo!";
         public static string[] APIs = new string[] { "http://websiteexample_.com", "http://websiteexample_2.com" };
