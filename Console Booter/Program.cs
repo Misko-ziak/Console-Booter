@@ -39,6 +39,7 @@ namespace Console_Booter
                             {
                                 string api = Config.APIs[i];
                                 Thread thread = new Thread(() => WorkThread(api));
+                                thread.Start();
                                 //Functions.MakeRequest(Config.APIs[i], false); -
                             }
                         }
