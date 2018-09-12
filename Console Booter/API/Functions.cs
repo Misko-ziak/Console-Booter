@@ -11,6 +11,7 @@ namespace Console_Booter.API
     {
         public static string MakeRequest(string requestUri, bool returnServerResponse)
         {
+            try{
             WebRequest wr = WebRequest.Create(requestUri);
             WebResponse ServerResponse = wr.GetResponse();
             Stream stream = ServerResponse.GetResponseStream();
@@ -20,6 +21,9 @@ namespace Console_Booter.API
                 return Streamreader.ReadToEnd();
             }
             return "";
+            }catch{
+                 return "";
+            }
         }
     }
 }
